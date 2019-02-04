@@ -1,0 +1,23 @@
+* {
+    background-color: #233A6A;
+    color: #8DBDBB; 
+    font-family: 'Raleway', sans-serif;
+}
+
+body, div, ul, li {
+    background-color: #233A6A;
+    color: #8DBDBB
+}
+
+.container, .jumbotron {
+    background-color: #233A6A;
+    color: #8DBDBB
+}
+
+link {
+    color: #8DBDBB
+}
+
+link:hover {
+    color: #EBC782
+}
