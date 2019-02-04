@@ -2,32 +2,32 @@
 
 {% block body%}
     <div class="container">
-            <div class="text-center"><h1>My Addresses</h1></div>
-            <hr>
-            <div class="text-center">
-                <a href='/newaddress/'><input type="submit" class="btn btn-info" value="Add an Address"></a>
-            </div>
-            <hr>
-            <div>
-                <ul class="list-group">
-                    {% for address in addresses %}
-                        <li class="list-group-item">
-                            {{address.id}}.
-                            {{address.name}} 
-                            {{address.address_1}}
-                            {{address.address_2}}
-                            {{address.city}}
-                            {{address.state}}           
-                            {{address.zipcode}}
-                            <div class="text-right">
+        <div class="text-center"><h1>My Addresses</h1></div>
+        <hr>
+        <div class="text-center">
+            <a href='/newaddress/' class="nav-link"><input type="submit" class="btn btn-info" value="Add an Address"></a>
+        </div>
+        <hr>
+        <div>
+            <ul class="list-group">
+                {% for address in addresses %}
+                    <li class="list-group-item">
+                        <div class="text-center">
+                            <p>{{address.id}}. {{address.surname}}</p>
+                            <p>{{address.address_1}}</p>
+                            <p>{{address.address_2}}</p>
+                            <p>{{address.city}}, {{address.state}} {{address.zipcode}}</p>
+                            <div class="text-center">
                                 <form action="{{url_for('deleteAddress', id = address.id)}}" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="submit" value = "DELETE" class ="btn btn-danger">
+                                    <input type="none" value="Edit Address" class ="btn btn-info">
+                                    <input type="hidden" name="_method" value="Delete this address">
+                                    <input type="submit" value="Delete Address" class ="btn btn-warning">
                                 </form>
                             </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}

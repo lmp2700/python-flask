@@ -1,29 +1,29 @@
 {% extends 'layout.html'%}
 
 {% block body %}
-  <div class="container">
+  <div class="container text-center">
     <h2 class='title'>City or State Lookup</h2>
     {% from "includes/_formhelpers.html" import render_field %}
-    <form method="POST" action="">
-    <div class="form-group">
-          {{render_field(form.name, class_="form-input")}}
-      </div>
-    <div class="form-group">
-          {{render_field(form.address_1, class_="form-input")}}
-      </div>
-      <div class="form-group">
-          {{render_field(form.address_2, class_="form-input")}}
-      </div>
-      <div class="form-group">
-          {{render_field(form.city, class_="form-input")}}
-      </div>
-      <div class="form-group">
-          {{render_field(form.state, class_="form-input")}}
-      </div>
-      <div class="form-group">
-          {{render_field(form.zipcode, class_="form-input")}}
-      </div>
-      <button class="btn btn-info" value="submit">Lookup</button>
-    </form>
+        <form method="POST" action="">
+        <div class="form-group">
+            {{render_field(form.name, class_="form-input")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.address_1, class_="form-input")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.address_2, class_="form-input")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.city, class_="form-input")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.state, class_="form-input")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.zipcode, class_="form-input")}}
+        </div>
+        <button class="btn btn-info" value="submit">Lookup</button>
+        </form>
   </div>
 {% endblock %}
