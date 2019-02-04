@@ -48,7 +48,7 @@ def newAddress():
         state = form.state.data
         zipcode = form.zipcode.data
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO addresses(surname, address_1, address_2, city, state, zipcode) VALUES(%s, %s, %s, %s, %s, %s, %s)", (surname, address_1, address_2, city, state, zipcode))
+        cur.execute("INSERT INTO addresses(surname, address_1, address_2, city, state, zipcode) VALUES(%s, %s, %s, %s, %s, %s, %s)", (id, surname, address_1, address_2, city, state, zipcode))
         mysql.connection.commit()
         cur.close()
         flash('Address added', 'success')
